@@ -1,13 +1,13 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../logo-risigraph.png";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 const NavBar = (props) => {
   return (
     <Navbar expand="lg">
-      <Container fluid>
+      <Container>
         <img src={logo} alt="logo" className="nav-logo" />
-        <Navbar.Brand href="/"> <span className="risi-brand-nav">Risi </span>Graph</Navbar.Brand>
+        <Link to="/" className="navbar-brand"> <span className="risi-brand-nav">Risi </span>Graph</Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -16,9 +16,9 @@ const NavBar = (props) => {
             navbarScroll
           >
             <div className="nav-links-container">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/progetti">Progetti</Nav.Link>
-              <Nav.Link href="#contatti">Contatti</Nav.Link>
+              <Link to="/" className="nav-link">Home</Link>
+              <Link to="/progetti" className="nav-link">Progetti</Link>
+              <Link to="#contatti" className="nav-link pr-0">Contatti</Link>
             </div>
           </Nav>
         </Navbar.Collapse>
