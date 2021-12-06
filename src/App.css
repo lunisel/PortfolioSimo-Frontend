@@ -286,6 +286,13 @@ iframe.youtube-about-me{
 
 .footer-big-container{
   width: 100%;
-  height: 20rem;
+  height: fit-content;
   background-color: #97b0cb;
+  display: flex;
+  padding: 2rem 10rem;
+}
+
+.footer-big-container .row{
+  width: 100%;
+  justify-content: space-between;
 }
