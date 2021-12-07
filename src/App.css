@@ -564,3 +564,22 @@ h1.portfolio-titolo {
 .img-container-progetto img:hover {
   filter: opacity(0.8);
 }
+
+/* ---------------------------------------------QUERYS----------------------------------------- */
+@media (max-width: 1000px){
+  .carousel-item{
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  img.first-slide-img{
+    padding: 2rem 0;
+    width: 85%;
+  }
+
+  .first-slide-caption.carousel-caption{
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+}
