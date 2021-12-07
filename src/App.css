@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .App {
   width: 100%;
@@ -69,10 +69,19 @@
   justify-content: flex-end;
 }
 
-.nav-links-container {
+.ant-anchor {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ant-anchor-link-title{
+  color: inherit;
+}
+
+.ant-anchor-link-title:hover{
+  color: inherit;
+  text-decoration: none;
 }
 
 .navbar-brand,
@@ -139,6 +148,7 @@
 .nav-link:hover::after {
   left: 0;
 }
+
 
 /* ---------------------------------- HOME - CAROUSEL --------------------------------------- */
 .carousel-item {
@@ -241,12 +251,14 @@ img.second-slide-img {
 /* ---------------------------------ABOUT ME------------------------------------ */
 
 h2.title-about-me {
-  color: #161616;
-  font-family: 'Roboto', sans-serif;
-  font-size: 3.5rem;
-  font-weight: 600;
+  color: #fff9f0;
+  font-family: 'Montserrat';
+  font-size: 48px;
+  font-weight: 700;
   text-align: center;
   margin: 3rem 0;
+  padding: 1rem 0;
+  background-color: #D5BEA6;
 }
 
 .about-me-inner-container {
@@ -265,7 +277,7 @@ h2.title-about-me {
 .text-about-me-cont span {
   display: block;
   color: #161616;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 500;
   margin-bottom: 3rem;
@@ -301,10 +313,18 @@ iframe.youtube-about-me {
 
 h4.footer-titles {
   color: #161616;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 2rem;
+}
+
+.footer-contact-us-title{
+  color: #161616;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .footer-contsct-us-cont{
@@ -326,7 +346,7 @@ h4.footer-titles {
 }
 
 .footer-contact-us-text{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-weight: 300;
 }
@@ -339,4 +359,60 @@ input.footer-inputs.form-control{
 ul{
   list-style-type: none;
   padding: 0 !important;
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0.5rem; 
+}
+
+.icons-footer{
+  width: 2rem;
+  font-size: 1.5rem;
+}
+
+.footer-links, .footer-contacts{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: underline;
+  color: #161616;
+  transition: all 0,5s ease;
+}
+
+.footer-links:hover, .footer-contacts:hover{
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.icons-footer{
+  cursor: pointer;
+  color: #c7d4e4;
+}
+
+.icons-footer:hover{
+  cursor: pointer;
+  color: white;
+}
+
+.go-up-link-footer{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ant-anchor-link.ant-anchor-link-active.go-up{
+  border: #BECEDF 2px solid;
+  padding: 0.3rem 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.ant-anchor-link.ant-anchor-link-active.go-up:hover{
+  background-color: #BECEDF;
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@ import { Carousel} from "react-bootstrap";
 
 const TopCarousel = () => {
     return(
-        <Carousel fade>
+        <Carousel fade id="carousel">
         <Carousel.Item className="first-slide">
           <img
             className="first-slide-img"
