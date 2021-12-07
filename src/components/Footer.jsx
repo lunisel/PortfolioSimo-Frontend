@@ -60,11 +60,6 @@ const Footer = (props) => {
                 window.open("https://www.linkedin.com/in/lunisel/")
               }
             />
-            <div className="go-up-link-footer">
-              <Anchor affix={false}>
-                <Anchor.Link href="#navbar" title="Go Back Up" className="go-up"/>
-              </Anchor>
-            </div>
           </Col>
 
           <Col xs={12} md={2}>
@@ -110,7 +105,7 @@ const Footer = (props) => {
               <Form.Group>
                 <Form.Control
                   type="text"
-                  placeholder="Name"
+                  placeholder="Nome"
                   name="name"
                   className="footer-inputs"
                 />
@@ -126,7 +121,7 @@ const Footer = (props) => {
               <Form.Group>
                 <Form.Control
                   type="text"
-                  placeholder="Subject"
+                  placeholder="Oggetto"
                   name="subject"
                   className="footer-inputs"
                 />
@@ -136,15 +131,24 @@ const Footer = (props) => {
                   className="form-control footer-inputs"
                   id="message"
                   rows="3"
-                  placeholder="Your message..."
+                  placeholder="Il tuo messaggio..."
                   name="message"
                 ></textarea>
               </Form.Group>
               <Button type="submit" className="w-100 submit-footer-form-btn">
-                Submit Form
+                Invia
               </Button>
             </Form>
           </Col>
+          <div className="go-up-link-footer">
+            <Anchor affix={false}>
+              <Anchor.Link
+                href="#top-page"
+                title="Go Back Up"
+                className="go-up"
+              />
+            </Anchor>
+          </div>
         </Row>
       </Container>
     </div>

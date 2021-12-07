@@ -6,7 +6,7 @@ import { Anchor } from "antd";
 
 const NavBar = (props) => {
   return (
-    <Navbar expand="lg" id="navbar">
+    <Navbar expand="lg" id="navbar" className="fixed-top">
       <Container>
         <img src={logo} alt="logo" className="nav-logo" />
         <a href="/" className="navbar-brand">
@@ -19,7 +19,7 @@ const NavBar = (props) => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Anchor affix={false}>
+            <Anchor affix={true}>
               <Anchor.Link href="/" className="nav-link" title="Home" />
               <Anchor.Link
                 href="/progetti"
