@@ -566,7 +566,7 @@ h1.portfolio-titolo {
 }
 
 /* ---------------------------------------------QUERYS----------------------------------------- */
-@media (max-width: 1000px){
+@media (max-width: 991px){
   .carousel-item{
     flex-direction: column;
     align-items: center !important;
