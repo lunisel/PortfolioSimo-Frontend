@@ -1,13 +1,10 @@
-import { Container } from "react-bootstrap";
-import AboutMe from "./AboutMe";
-import HomeProgetti from "./HomeProgetti";
+import Jumbotron from "./Jumbotron";
 
 const Home = (props) => {
   return (
-    <Container className="home-container" id="home">
-      <AboutMe/>
-      <HomeProgetti props={props}/>
-    </Container>
+    <div className="big-container">
+      <Jumbotron props={props}/>
+    </div>
   );
 };
 
