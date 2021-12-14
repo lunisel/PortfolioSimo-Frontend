@@ -1,5 +1,4 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar.jsx";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
