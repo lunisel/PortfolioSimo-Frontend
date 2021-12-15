@@ -1,7 +1,11 @@
 const AboutMe = () => {
   return (
-    <div className="about-me-container" id="about-me">
-      <h2 className="title-about-me">Conosciamoci meglio</h2>
+    <div className="container" id="about-me">
+      <div className="title-container">
+        <h2>ABOUT ME</h2>
+        <div className="line"></div>
+      </div>
+
       <div className="about-me-inner-container">
         <div className="text-about-me-cont">
           <span>Ciao, sono Simone Risi...</span>
@@ -15,7 +19,7 @@ const AboutMe = () => {
         </div>
         <div className="video-about-me-cont">
           <iframe
-          className="youtube-about-me"
+            className="youtube-about-me"
             src="https://www.youtube.com/embed/oMltzYWxjS4"
             title="YouTube video player"
             frameborder="0"

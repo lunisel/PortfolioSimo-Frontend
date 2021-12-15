@@ -1,7 +1,7 @@
 const Progetti = (props) => {
   return (
     <div className="progetti-big-container">
-      <h1 className="portfolio-titolo">Il mio Portfolio</h1>
+      <h1 className="portfolio-titolo">Risi Graph Render</h1>
       <div className="container-progetti">
         <div className="img-container-progetto">
           <img

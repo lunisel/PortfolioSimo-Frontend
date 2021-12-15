@@ -8,9 +8,9 @@
   --dark-white: #f1f1f1;
   --main: #cbb297;
   --accent: #97b0cb;
-  --big-font-size: 3rem;
-  --medium-font-size: 1.5rem;
-  --small-font-size: 1rem;
+  --big-font-size: 2rem;
+  --medium-font-size: 1.7rem;
+  --small-font-size: 0.8rem;
   --xs-font-size: 0.5rem;
 }
 
@@ -60,6 +60,12 @@ p {
 
 .big-container{
   width: 100%;
+  position: relative;
+  height: fit-content;
+}
+
+.big-container.home{
+  padding-top: 6rem;
 }
 
 /* ---------------------------------------NAVBAR------------------------------- */
@@ -85,7 +91,7 @@ nav.navbar .container {
 }
 
 .logo-name {
-  font-size: var(--medium-font-size);
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
@@ -197,12 +203,163 @@ nav.navbar .container {
 
 /* --------------------------------------------HOME - JUMBOTRON----------------------------------------------*/
 
+.big-container.jumbotron{
+  height: 35vh;
+  margin-bottom: 3rem;
+}
+
 .jumbotron-background{
   width: 100%;
-  max-height: 100vh;
-  object-fit: cover;
-  margin-top: 6.5rem;
+  height: 35vh;
   position: absolute;
+}
+
+.jumbotron-background::after{
+ content: '';
+ display: block;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ width: 100%;
+ background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 90%);
+}
+
+.jumbotron-background img{
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+}
+
+.container.jumbotron{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  justify-content: center;
+  height: 100%;
+}
+
+.container.jumbotron h1,.container.jumbotron p{
+  color: var(--dark-white);
+}
+
+.jumbotron-title{
+  line-height: 1.8rem;
+  font-size: var(--medium-font-size);
+  width: 15ch;
+  margin-bottom: 1rem;
+}
+
+.jumbotron-sub-text{
+  line-height: 1.5rem;
+  font-size: var(--small-font-size);
+  width: 35ch;
+  margin-bottom: 1rem;
+}
+
+.container.jumbotron button{
+  background-color: transparent;
+  border: solid 1px var(--dark-white);
+  padding: 0.5rem 1rem;
+  color: var(--dark-white);
+  display: flex;
+  align-items: center;
+}
+
+/* -------------------------------------------HOME - CONTATTAMI---------------------------------------------- */
+
+.container.contattami{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 3rem;
+}
+
+.text-container-contattami{
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.text-container-contattami h1{
+  color: var(--primary-black);
+  line-height: 1.8rem;
+  font-size: var(--big-font-size);
+  width: 10ch;
+}
+
+.text-container-contattami p{
+  color: var(--primary-black);
+  line-height: 1.5rem;
+  font-size: var(--small-font-size);
+  max-width: 40ch;
+}
+
+.text-container-contattami button{
+  width: fit-content;
+  color: var(--dark-white);
+  background-color: var(--accent);
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.container.contattami img{
+  z-index: 1;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: left;
+}
+
+.cornice{
+  position: absolute;
+  z-index: 2;
+  left: 30%;
+  top: 10%;
+  width: 40%;
+  height: 80%;
+  border: solid 5px var(--main);
+}
+
+/* --------------------------------------------HOME - ABOUT ME--------------------------------------------- */
+#about-me{
+margin-bottom: 2rem;
+}
+
+#about-me .title-container{
+  color: var(--main);
+  font-size: var(--big-font-size);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#about-me .title-container h2{
+  color: var(--main);
+  font-size: var(--big-font-size);
+  white-space: nowrap;
+  width: fit-content;
+  margin-right: 0.5rem;
+}
+
+#about-me .title-container .line{
+ width: 100%;
+ height: 3px;
+ background-color: var(--main);
+}
+
+.about-me-inner-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.video-about-me-cont iframe{
+  width: 100%;
 }
 
 /* -------------------------------------------HOME - PROGETTI----------------------------------------------- */

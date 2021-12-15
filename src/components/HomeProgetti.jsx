@@ -1,7 +1,7 @@
 
 const HomeProgetti = ({props}) => {
   return (
-    <div className="progetti-home-big-container">
+    <div className="big-container">
       <div className="progetto-singolo-cont">
         <img
           src="https://3dvisdesign.com/wp-content/uploads/2020/11/Living-room-rendering-3-600x600.jpg"
