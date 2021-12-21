@@ -38,6 +38,7 @@
   justify-content: space-between;
   align-items: center;
   width: 20%;
+  margin-bottom: 0.5rem;
 }
 .dots-container .dot {
   font-size: 1rem;
@@ -122,4 +123,84 @@
   color: var(--dark-white);
   display: flex;
   align-items: center;
+}
+
+/* -------------------------------------QUERYS--------------------------------------- */
+
+@media screen and (min-width: 500px) {
+  .big-container.carousel,
+  .big-container.jumbotron,
+  .jumbotron-background,
+  .jumbotron-background iframe {
+    height: 50vh;
+  }
+
+  .dots-container {
+    width: 10%;
+  }
+
+  .jumbotron-title {
+    line-height: 1.8rem;
+  }
+
+  .jumbotron-title.three {
+    width: 25ch;
+  }
+
+  .jumbotron-sub-text {
+    line-height: 1.5rem;
+    width: 30ch;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .big-container.carousel,
+  .big-container.jumbotron,
+  .jumbotron-background,
+  .jumbotron-background iframe {
+    height: 70vh;
+  }
+
+  .dots-container {
+    width: 5%;
+  }
+
+  .jumbotron-title {
+    line-height: 2rem;
+  }
+
+  .jumbotron-title.three {
+    width: 25ch;
+  }
+
+  .jumbotron-sub-text {
+    line-height: 2rem;
+    width: 30ch;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .big-container.carousel,
+  .big-container.jumbotron,
+  .jumbotron-background,
+  .jumbotron-background iframe {
+    height: 80vh;
+  }
+
+  .dots-container {
+    width: 5%;
+  }
+
+  .jumbotron-title {
+    line-height: 2.3rem;
+  }
+
+  .jumbotron-title.three {
+    width: 25ch;
+  }
+
+  .jumbotron-sub-text {
+    line-height: 2.5rem;
+    width: 30ch;
+  }
 }

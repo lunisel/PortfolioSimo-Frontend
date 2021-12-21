@@ -57,7 +57,7 @@ const Carousel1 = (props) => {
             />
           </div>
           <div className="container jumbotron">
-            <h1 className="jumbotron-title">
+            <h1 className="jumbotron-title three">
               Trasforma le tue semplici piante in piante d'impatto
             </h1>
             <p className="jumbotron-sub-text">
@@ -71,7 +71,7 @@ const Carousel1 = (props) => {
         <div className="big-container jumbotron">
           <div className="jumbotron-background">
             <iframe
-              src="https://www.youtube.com/embed/9AWUQrBHqwo?controls=0&loop=1&autoplay=1&mute=1"
+              src="https://www.youtube.com/embed/6g6yUfKy0Fw?controls=0&loop=1&autoplay=1&mute=1"
               title="YouTube video player"
             ></iframe>
           </div>
