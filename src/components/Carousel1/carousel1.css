@@ -184,7 +184,7 @@
   .big-container.jumbotron,
   .jumbotron-background,
   .jumbotron-background iframe {
-    height: 80vh;
+    height: 40rem;
   }
 
   .dots-container {
@@ -202,5 +202,20 @@
   .jumbotron-sub-text {
     line-height: 2.5rem;
     width: 30ch;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .big-container.carousel,
+  .big-container.jumbotron,
+  .jumbotron-background,
+  .jumbotron-background iframe {
+    height: 40rem;
+  }
+
+  .big-container.carousel {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 3rem;
   }
 }
