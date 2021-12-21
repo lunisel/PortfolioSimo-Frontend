@@ -54,13 +54,15 @@ const Footer = (props) => {
           <div className="form-container">
             <h4>CHIEDI INFO E PREVENTIVI GRATUITI</h4>
             <form ref={form} onSubmit={(e) => sendEmail(e)}>
-              <div className="form-group">
-                <input type="text" placeholder="NOME" />
-                <input type="text" placeholder="EMAIL" />
-                <input type="text" placeholder="OGGETTO" />
-              </div>
-              <div className="textarea">
-                <textarea></textarea>
+              <div className="inputs-cont">
+                <div className="form-group">
+                  <input type="text" placeholder="NOME" />
+                  <input type="text" placeholder="EMAIL" />
+                  <input type="text" placeholder="OGGETTO" />
+                </div>
+                <div className="textarea">
+                  <textarea placeholder="IL TUO MESSAGGIO..."></textarea>
+                </div>
               </div>
               <button type="submit" className="submit-footer-form-btn">
                 INVIA

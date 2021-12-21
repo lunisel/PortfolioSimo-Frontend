@@ -4,7 +4,7 @@
   width: 100%;
   height: fit-content;
   background-color: var(--main);
-  padding: 3rem 0 1rem 0;
+  padding: 3rem 0 1.5rem 0;
 }
 
 .top-footer-container .container {
@@ -48,102 +48,58 @@ ul.footer-info {
   color: var(--dark-white);
   font-weight: 600;
   line-height: 1.8rem;
+  cursor: pointer;
 }
 
 .info-container p:hover {
-  cursor: pointer;
   text-decoration: underline;
 }
 
 .form-container {
   width: 100%;
+}
+
+form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
-.footer-contsct-us-cont {
-  background-color: rgba(255, 255, 255, 0.377);
+.inputs-cont {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 2rem 3rem !important;
+  gap: 1rem;
 }
 
-.footer-form-cont {
-  background-color: rgba(255, 255, 255, 0.377);
-  padding: 2rem 3rem 2rem 0 !important;
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 7rem;
+  justify-content: space-between;
 }
 
-.contact-us-info-cont {
-  background-color: white;
-  padding: 3rem;
-}
-
-.footer-contact-us-text {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-input.footer-inputs.form-control {
+.form-group input,
+.textarea textarea {
+  width: 100%;
   border: transparent 1px solid;
   background-color: white;
+  padding: 0.5rem 0 0.5rem 1rem;
+  color: var(--dark-gray);
+  font-family: var(--main-font);
+  font-weight: 400;
 }
 
-.icons-footer {
-  width: 2rem;
-  font-size: 1.5rem;
-  color: #f8eddc;
-  cursor: pointer;
+.textarea {
+  width: 100%;
 }
 
-.footer-links,
-.footer-contacts {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  text-decoration: underline;
-  color: #161616;
-  transition: all 0, 5s ease;
-}
-
-.footer-links:hover,
-.footer-contacts:hover {
-  color: rgba(0, 0, 0, 0.7);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.icons-footer:hover {
-  cursor: pointer;
-  color: white;
-}
-
-.row {
-  position: relative;
-}
-
-.go-up-link-footer {
-  position: absolute;
-  bottom: 0;
-  left: 3.5rem;
-}
-
-.ant-anchor-link.go-up {
-  border: #f8eddc 2px solid;
-  padding: 0.3rem 0.5rem;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
-  color: white;
-}
-
-.ant-anchor-link.go-up:hover {
-  background-color: #f8eddc;
-  cursor: pointer;
-  color: #161616;
+.textarea textarea {
+  height: 7rem;
 }
 
 .submit-footer-form-btn {
@@ -168,4 +124,75 @@ input.footer-inputs.form-control {
 
 .submit-footer-form-btn:focus {
   box-shadow: 0 0 0 0.2rem #97b0cb;
+}
+
+.bottom-footer-container {
+  border-top: solid 1px var(--dark-white);
+  padding-top: 1.5rem;
+}
+
+.bottom-footer-container .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-footer-container p {
+  color: var(--dark-white);
+  font-weight: 300;
+  font-size: var(--xs-font-size);
+  width: fit-content;
+}
+
+.bottom-footer-container p span {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 900px) {
+  .top-footer-container .container {
+    flex-direction: row;
+  }
+
+  .info-container {
+    width: 30%;
+  }
+
+  .form-container {
+    width: 70%;
+  }
+
+  .form-container h4 {
+    text-align: center;
+  }
+
+  .form-group {
+    height: 10rem;
+    grid-column: 1/3;
+  }
+
+  .textarea textarea {
+    height: 10rem;
+    grid-column: 4/6;
+  }
+
+  .btn-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .submit-footer-form-btn {
+    left: 30rem;
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+
+  .inputs-cont {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .bottom-footer-container .container {
+    flex-direction: row;
+  }
 }
