@@ -1,0 +1,125 @@
+.big-container {
+  width: 100%;
+  position: relative;
+}
+
+.big-container.carousel {
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+}
+
+.big-container.carousel .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 2000ms ease;
+}
+
+.big-container.carousel .slide.active {
+  z-index: 1;
+  opacity: 1;
+}
+
+.big-container.carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+.dots-container .dot {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.dots-container .dot.active {
+  color: white;
+}
+
+/* --------------------------------------------HOME - JUMBOTRON----------------------------------------------*/
+
+.big-container.jumbotron {
+  height: 35vh;
+  margin-bottom: 3rem;
+}
+
+.jumbotron-background {
+  width: 100%;
+  height: 35vh;
+  position: absolute;
+}
+
+.jumbotron-background::after {
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+.jumbotron-background img,
+.jumbotron-background iframe {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+}
+
+.container.jumbotron {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  justify-content: center;
+  height: 100%;
+}
+
+.container.jumbotron h1,
+.container.jumbotron p {
+  color: var(--dark-white);
+}
+
+.jumbotron-title {
+  line-height: 1.8rem;
+  font-size: var(--medium-font-size);
+  width: 15ch;
+  margin-bottom: 1rem;
+}
+
+.jumbotron-title.three {
+  width: 25ch;
+}
+
+.jumbotron-sub-text {
+  line-height: 1.5rem;
+  font-size: var(--small-font-size);
+  width: 30ch;
+  margin-bottom: 1rem;
+}
+
+.container.jumbotron button {
+  background-color: transparent;
+  border: solid 1px var(--dark-white);
+  padding: 0.5rem 1rem;
+  color: var(--dark-white);
+  display: flex;
+  align-items: center;
+}

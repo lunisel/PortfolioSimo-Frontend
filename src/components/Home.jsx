@@ -1,15 +1,15 @@
 import AboutMe from "./AboutMe";
 import Contattami from "./Contattami";
 import HomeProgetti from "./HomeProgetti";
-import Jumbotron from "./Jumbotron";
+import Carousel1 from "./Carousel1/Carousel1.jsx";
 
 const Home = (props) => {
   return (
     <div className="big-container home">
-      <Jumbotron props={props}/>
-      <Contattami props={props}/>
-      <AboutMe/>
-      <HomeProgetti props={props}/>
+      <Carousel1 props={props} />
+      <Contattami props={props} />
+      <AboutMe />
+      <HomeProgetti props={props} />
     </div>
   );
 };
