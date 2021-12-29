@@ -12,7 +12,7 @@ const Contattami = () => {
       </div>
       <div className="cornice"></div>
       <img
-        src="https://res.cloudinary.com/lunisel/image/upload/v1640692425/risiGraph/vnzu86vspva8d99q1rs1.jpg"
+        src="https://res.cloudinary.com/lunisel/image/upload/v1640807812/risiGraph/wpadlnvrzru0ivwdnbvm.jpg"
         alt="interno di una casa"
       />
     </div>

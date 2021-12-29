@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer/Footer";
-import Progetti from "./components/Progetti";
+import Progetti from "./components/Progetti/Progetti.jsx";
 import Navbar1 from "./components/Navbar1/Navbar1.jsx";
 
 function App() {

@@ -63,6 +63,10 @@
   margin: 0;
 }
 
+html {
+  position: relative;
+}
+
 .App {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -110,7 +114,7 @@ p {
 .container.contattami {
   display: grid;
   grid-template-columns: 50% 50%;
-  margin-bottom: 3rem;
+  margin-block: 2rem;
 }
 
 .text-container-contattami {
@@ -132,10 +136,14 @@ p {
 
 .text-container-contattami p {
   color: var(--primary-black);
+  width: fit-content;
   line-height: 1.5rem;
   font-size: var(--medium-font-size);
-  width: 28ch;
-  font-weight: 500;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  padding-right: 1rem;
 }
 
 .container.contattami img {
@@ -147,18 +155,6 @@ p {
   position: relative;
 }
 
-.container.contattami::after {
-  content: "";
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.4);
-  display: block;
-  z-index: 1;
-  top: 0;
-  right: 0;
-}
-
 .cornice {
   position: absolute;
   z-index: 2;
@@ -166,7 +162,7 @@ p {
   top: 10%;
   width: 40%;
   height: 80%;
-  border: solid 2px var(--main);
+  border: solid 4px var(--main);
 }
 
 @media screen and (min-width: 500px) {
@@ -176,10 +172,6 @@ p {
 
   .text-container-contattami p {
     line-height: 2rem;
-  }
-
-  .cornice {
-    border: solid 3px var(--main);
   }
 }
 
@@ -193,7 +185,7 @@ p {
   }
 
   .cornice {
-    border: solid 4px var(--main);
+    border: solid 5px var(--main);
     width: 35%;
   }
 }
@@ -205,11 +197,10 @@ p {
 
   .text-container-contattami p {
     line-height: 3rem;
-    width: 40ch;
   }
 
   .cornice {
-    border: solid 5px var(--main);
+    border: solid 6px var(--main);
     width: 30%;
     left: 35%;
   }
@@ -222,10 +213,11 @@ p {
 
   .text-container-contattami p {
     line-height: 3.2rem;
+    width: 40ch;
   }
 
   .cornice {
-    border: solid 5px var(--main);
+    border: solid 7px var(--main);
     width: 30%;
     left: 35%;
   }
@@ -233,7 +225,7 @@ p {
 
 /* --------------------------------------------HOME - ABOUT ME--------------------------------------------- */
 #about-me {
-  margin-bottom: 2rem;
+  margin-block: 2rem;
 }
 
 #about-me .title-container {
@@ -372,85 +364,6 @@ h6.progetto-home-titolo {
 .progetto-singolo-btn:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
-}
-
-/* ---------------------------------------------PROGETTI----------------------------------------------- */
-
-.progetti-big-container {
-  padding-top: 6rem;
-  margin-bottom: 2rem;
-}
-
-h1.portfolio-titolo {
-  font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  color: #161616;
-  text-align: center;
-  margin: 4rem 0;
-}
-
-.container.progetti {
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  column-count: 3;
-  -webkit-column-width: 33%;
-  -moz-column-width: 33%;
-  column-width: 33%;
-  margin-bottom: 1rem;
-}
-
-.img-container-progetto img {
-  object-fit: cover;
-  width: 100%;
-  padding-block: 0.3rem;
-  -webkit-transition: all 350ms ease;
-  transition: all 350ms ease;
-  cursor: pointer;
-}
-
-.img-container-progetto img:hover {
-  filter: opacity(0.8);
-}
-
-.see-more {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
-  color: var(--primary-black);
-}
-
-.see-more:hover {
-  color: var(--dark-gray);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-@media (max-width: 900px) {
-  .container.progetti {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-width: 50%;
-    -moz-column-width: 50%;
-    column-width: 50%;
-  }
-}
-
-@media (max-width: 500px) {
-  .container.progetti {
-    -webkit-column-count: 1;
-    -moz-column-count: 1;
-    column-count: 1;
-    -webkit-column-width: 100%;
-    -moz-column-width: 100%;
-    column-width: 100%;
-  }
-
-  .container.contattami img {
-    height: 40vh;
-  }
 }
 
 /* ---------------------------------------------------SPINNER------------------------------------------ */
