@@ -2,15 +2,19 @@ const Contattami = () => {
   return (
     <div className="container contattami">
       <div className="text-container-contattami">
-        <h1>Crea. Renderizza. Collabora.</h1>
+        <h1>
+          Diamo vita <br /> alla tua visione
+        </h1>
         <p>
-          Hai un progetto di cui vuoi discutere? Hai bisogno di chiarire dei
-          dubbi? Riempi il from e ti ricontatterò al più presto!
+          Vuoi promuovere i tuoi progetti con immagini d’effetto? Rendere il tuo
+          lavoro più accessibile al pubblico? Scorri per saperne di più!
         </p>
-        <button>Contattami</button>
       </div>
       <div className="cornice"></div>
-      <img src="https://uploads-ssl.webflow.com/5894a32730554b620f7bf36d/5e848c30ae1ad81ed3ffa5df_5d14d33d86e4be76bae28c2e_What-Performance-Specs-Should-Your-PC-Have-to-Handle-3D-Rendering-EASY-RENDER.jpeg" alt="interno di una casa" />
+      <img
+        src="https://res.cloudinary.com/lunisel/image/upload/v1640692425/risiGraph/vnzu86vspva8d99q1rs1.jpg"
+        alt="interno di una casa"
+      />
     </div>
   );
 };

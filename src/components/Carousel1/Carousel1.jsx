@@ -5,6 +5,7 @@ import "./carousel1.css";
 
 const Carousel1 = (props) => {
   const [activeSlide, setActiveSlide] = useState(1);
+  /* const [mouseOver, setMouseOver] = useState(false); */
   const autoPlay = useRef();
 
   useEffect(() => {
@@ -28,12 +29,16 @@ const Carousel1 = (props) => {
   };
 
   return (
-    <div className="big-container carousel">
+    <div
+      className="big-container carousel"
+      /* onMouseOver={() => setMouseOver(true)}
+      onMouseOut={() => console.log("Out")} */
+    >
       <div className={activeSlide === 1 ? "slide active" : "slide"}>
         <div className="big-container jumbotron">
           <div className="jumbotron-background">
             <img
-              src="https://www.ronenbekerman.com/wp-content/uploads/2018/07/3d-max-realistic-render-house-exterior.jpg"
+              src="https://res.cloudinary.com/lunisel/image/upload/v1640692368/risiGraph/thbrw5ekmc46zyrxaiog.jpg"
               alt="render of house"
             />
           </div>
@@ -52,7 +57,7 @@ const Carousel1 = (props) => {
         <div className="big-container jumbotron">
           <div className="jumbotron-background">
             <img
-              src="https://3dream.it/wp-content/uploads/2020/11/planimetria-appartamento-4.jpg"
+              src="https://res.cloudinary.com/lunisel/image/upload/v1640692388/risiGraph/sj4ct1lumjxsdxwfla0p.jpg"
               alt="render of house"
             />
           </div>

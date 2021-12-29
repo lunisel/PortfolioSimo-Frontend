@@ -2,13 +2,12 @@ const AboutMe = () => {
   return (
     <div className="container" id="about-me">
       <div className="title-container">
-        <h2>ABOUT ME</h2>
+        <h2>MI PRESENTO</h2>
         <div className="line"></div>
       </div>
 
       <div className="about-me-inner-container">
         <div className="text-about-me-cont">
-          <span>Ciao, sono Simone Risi...</span>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

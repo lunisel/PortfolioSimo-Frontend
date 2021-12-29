@@ -196,3 +196,9 @@ form {
     flex-direction: row;
   }
 }
+
+@media screen and (min-width: 1500px) {
+  .footer-info .icons {
+    font-size: 2rem;
+  }
+}
