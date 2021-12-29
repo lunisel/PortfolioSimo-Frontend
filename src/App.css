@@ -204,6 +204,9 @@ p {
     width: 30%;
     left: 35%;
   }
+  .container.contattami {
+    margin-block: 5rem;
+  }
 }
 
 @media screen and (min-width: 1500px) {
@@ -212,8 +215,7 @@ p {
   }
 
   .text-container-contattami p {
-    line-height: 3.2rem;
-    width: 40ch;
+    line-height: 3.5rem;
   }
 
   .cornice {
@@ -273,6 +275,10 @@ p {
     width: 80vw;
     height: calc((80vw * 9) / 16);
   }
+
+  #about-me {
+    margin-block: 5rem;
+  }
 }
 
 @media screen and (min-width: 1300px) {
@@ -283,6 +289,10 @@ p {
   .video-about-me-cont iframe {
     width: 40vw;
     height: calc((40vw * 9) / 16);
+  }
+
+  .text-about-me-cont {
+    line-height: 2.5rem;
   }
 }
 

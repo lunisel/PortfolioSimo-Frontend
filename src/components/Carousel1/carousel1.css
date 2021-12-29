@@ -181,11 +181,10 @@
   .big-container.jumbotron,
   .jumbotron-background,
   .jumbotron-background iframe {
-    height: calc((80vw * 9) / 16);
+    height: calc((100vw * 9) / 16);
   }
 
   .big-container.carousel {
-    width: 80%;
     margin: 1rem auto;
     margin-bottom: 3rem;
   }
@@ -204,6 +203,19 @@
 
   .container.contattami img {
     height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .big-container.carousel,
+  .big-container.jumbotron,
+  .jumbotron-background,
+  .jumbotron-background iframe {
+    height: calc((80vw * 9) / 16);
+  }
+
+  .big-container.carousel {
+    width: 80%;
   }
 }
 

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchAll } from "./progettiLogic.js";
-import { MdOutlineKeyboardArrowDown, MdClose } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowDown,
+  MdClose,
+  MdArrowForwardIos,
+  MdArrowBackIos,
+} from "react-icons/md";
 import "./progetti.css";
 
 const Progetti = (props) => {
@@ -44,11 +49,33 @@ const Progetti = (props) => {
   return (
     <div className="progetti-big-container">
       {modal ? (
-        <div className={selectedImg ? "modal open" : "modal"}>
-          {selectedImg && (
+        <div className={selectedImg !== null ? "modal open" : "modal"}>
+          {selectedImg !== null && (
             <>
-              <img src={selectedImg.url} alt="render" />
-              <MdClose onClick={() => setModal(false)} />
+              <img src={allFiles[selectedImg].url} alt="render" />
+              <MdClose onClick={() => setModal(false)} id="close" />
+              <MdArrowForwardIos
+                onClick={() => {
+                  console.log(selectedImg);
+                  if (selectedImg < allFiles.length - 1) {
+                    setSelectedImg(selectedImg + 1);
+                  } else {
+                    setSelectedImg(0);
+                  }
+                }}
+                id="next"
+              />
+              <MdArrowBackIos
+                onClick={() => {
+                  console.log(selectedImg);
+                  if (selectedImg === 0) {
+                    setSelectedImg(allFiles.length - 1);
+                  } else {
+                    setSelectedImg(selectedImg - 1);
+                  }
+                }}
+                id="prev"
+              />
               {}
             </>
           )}
@@ -58,13 +85,14 @@ const Progetti = (props) => {
           <h1 className="portfolio-titolo">Risi Graph Render</h1>
           <div className="container progetti">
             {seenFiles &&
-              seenFiles.map((f) => (
+              seenFiles.map((f, i) => (
                 <div
                   className="img-container-progetto"
                   onClick={() => {
-                    setSelectedImg(f);
+                    setSelectedImg(i);
                     setModal(true);
                   }}
+                  key={i}
                 >
                   <img src={f.url} alt="render" />
                 </div>
