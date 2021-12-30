@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAll } from "./progettiLogic.js";
+import { fetchAll, fetchOne } from "./progettiLogic.js";
 import {
   MdOutlineKeyboardArrowDown,
   MdClose,
@@ -9,41 +9,101 @@ import {
 import "./progetti.css";
 
 const Progetti = (props) => {
-  const [seenFiles, setSeenFiles] = useState([]);
-  const [allFiles, setAllFiles] = useState([]);
+  const [seenFiles, setSeenFiles] = useState(null);
+  const [allFiles, setAllFiles] = useState(0);
+  const [allFilesIds, setAllFilesIds] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
   const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedImgId, setSelectedImgId] = useState(null);
+  const [seenIds, setSeenIds] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     const fetchNine = async () => {
-      let allFiles = await fetchAll();
-      setAllFiles(allFiles);
-      let nineFilesArray = [];
-      for (let i = 0; i < 9; i++) {
-        nineFilesArray.push(allFiles[i]);
+      let files = await fetchAll(null);
+      if (files) {
+        let totalLength = files.allFilesLength;
+        let nineFiles = files.nineFiles;
+        console.log(nineFiles);
+        let allIds = files.allFilesIds;
+        let ids = [];
+        if (totalLength) setAllFiles(totalLength);
+        if (nineFiles) setSeenFiles(nineFiles);
+        if (allIds) setAllFilesIds(allIds);
+
+        for (let i = 0; i < 9; i++) {
+          let id = nineFiles[i]._id;
+          ids.push(id);
+        }
+
+        if (ids.length === 9) {
+          setSeenIds(ids);
+        }
+
+        setLoading(false);
       }
-      setSeenFiles(nineFilesArray);
-      if (seenFiles) setLoading(false);
     };
     fetchNine();
   }, []);
 
-  const loadMore = () => {
+  const loadMore = async () => {
     setLoading(true);
-    setTimeout(() => {
-      let fileArray = [...seenFiles];
-      for (let i = 0; i < 9; i++) {
-        if (allFiles[i + seenFiles.length] !== undefined) {
-          fileArray.push(allFiles[i + seenFiles.length]);
+
+    let files = await fetchAll(seenIds);
+    if (files) {
+      let nineFiles = [...seenFiles];
+      nineFiles.push(...files.nineFiles);
+      let ids = seenIds;
+      setSeenFiles(nineFiles);
+      console.log(nineFiles);
+      if (seenFiles) {
+        setLoading(false);
+        for (let i = 0; i < 9; i++) {
+          let id = seenFiles[i]._id;
+          ids.push(id);
+          setSeenIds(ids);
         }
       }
+    }
+  };
 
-      setSeenFiles(fileArray);
+  useEffect(() => {
+    if (selectedImgId !== null) {
+      const fetchWithId = async () => {
+        let single = await fetchOne(selectedImgId);
+        if (single) {
+          setSelectedImg(single);
+        }
+      };
+      fetchWithId();
+    }
+  }, [selectedImgId]);
 
-      setLoading(false);
-    }, 1000);
+  const nextPhoto = () => {
+    let indexOfSelectedImg = allFilesIds.indexOf(selectedImgId);
+    if (indexOfSelectedImg === allFiles - 1) {
+      let next = allFilesIds[0];
+      let nextId = next._id;
+      setSelectedImgId(nextId);
+    } else {
+      let next = allFilesIds[indexOfSelectedImg + 1];
+      let nextId = next._id;
+      setSelectedImgId(nextId);
+    }
+  };
+
+  const prevPhoto = () => {
+    let indexOfSelectedImg = allFilesIds.indexOf(selectedImgId);
+    if (indexOfSelectedImg === 0) {
+      let prev = allFilesIds[allFiles - 1];
+      let prevId = prev._id;
+      setSelectedImgId(prevId);
+    } else {
+      let prev = allFilesIds[indexOfSelectedImg - 1];
+      let prevId = prev._id;
+      setSelectedImgId(prevId);
+    }
   };
 
   return (
@@ -52,31 +112,20 @@ const Progetti = (props) => {
         <div className={selectedImg !== null ? "modal open" : "modal"}>
           {selectedImg !== null && (
             <>
-              <img src={allFiles[selectedImg].url} alt="render" />
+              <img src={selectedImg.url} alt="render" />
               <MdClose onClick={() => setModal(false)} id="close" />
               <MdArrowForwardIos
                 onClick={() => {
-                  console.log(selectedImg);
-                  if (selectedImg < allFiles.length - 1) {
-                    setSelectedImg(selectedImg + 1);
-                  } else {
-                    setSelectedImg(0);
-                  }
+                  nextPhoto();
                 }}
                 id="next"
               />
               <MdArrowBackIos
                 onClick={() => {
-                  console.log(selectedImg);
-                  if (selectedImg === 0) {
-                    setSelectedImg(allFiles.length - 1);
-                  } else {
-                    setSelectedImg(selectedImg - 1);
-                  }
+                  prevPhoto();
                 }}
                 id="prev"
               />
-              {}
             </>
           )}
         </div>
@@ -89,7 +138,7 @@ const Progetti = (props) => {
                 <div
                   className="img-container-progetto"
                   onClick={() => {
-                    setSelectedImg(i);
+                    setSelectedImgId(f._id);
                     setModal(true);
                   }}
                   key={i}
@@ -100,7 +149,7 @@ const Progetti = (props) => {
           </div>
           {loading ? (
             <div class="loader">Loading...</div>
-          ) : allFiles.length !== seenFiles.length ? (
+          ) : seenFiles !== null && allFiles >= seenFiles.length ? (
             <div className="see-more" onClick={() => loadMore()}>
               <MdOutlineKeyboardArrowDown /> See more
             </div>
