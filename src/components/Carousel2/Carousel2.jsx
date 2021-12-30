@@ -22,7 +22,7 @@ const Carousel2 = ({ props }) => {
   };
 
   return (
-    <div className="big-container carousel" id="calousel1">
+    <div className="big-container carousel" id="calousel2">
       <div className={activeSlide === 1 ? "slide active" : "slide"}>
         <div className="big-container carousel2">
           <div className="carousel2-background">

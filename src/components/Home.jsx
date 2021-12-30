@@ -5,7 +5,7 @@ import Carousel2 from "./Carousel2/Carousel2";
 
 const Home = (props) => {
   return (
-    <div className="big-container home">
+    <div className="big-container home" id="home">
       <Carousel1 props={props} />
       <Contattami props={props} />
       <AboutMe />

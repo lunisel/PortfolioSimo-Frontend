@@ -50,6 +50,10 @@ const Footer = (props) => {
             </ul>
             <p>Informativa sulla privacy</p>
             <p>Informativa sui cookies</p>
+            <div class="tooltip" onClick={() => window.scrollTo(0, 0)}>
+              <BsFillArrowUpSquareFill />
+              <span class="tooltiptext">Torna su</span>
+            </div>
           </div>
           <div className="form-container">
             <h4>CHIEDI INFO E PREVENTIVI GRATUITI</h4>

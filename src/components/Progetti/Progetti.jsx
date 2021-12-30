@@ -27,7 +27,7 @@ const Progetti = (props) => {
       setSeenFiles(nineFilesArray);
       if (seenFiles) setLoading(false);
     };
-    setTimeout(fetchNine, 1000);
+    fetchNine();
   }, []);
 
   const loadMore = () => {

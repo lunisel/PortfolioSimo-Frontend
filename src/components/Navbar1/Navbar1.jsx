@@ -64,14 +64,14 @@ const Navbar1 = (props) => {
             </Link>
           </li>
           <li>
-            <Link
-              to="/contatti"
+            <a
+              href="#footer-main"
               className={
                 props.location.pathname === "/contatti" ? "active" : ""
               }
             >
               CONTATTI
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
