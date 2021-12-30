@@ -107,9 +107,9 @@ h1.portfolio-titolo {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-    -webkit-column-width: 50%;
-    -moz-column-width: 50%;
     column-width: 50%;
+    -moz-column-width: 50%;
+    -webkit-column-width: 50%;
   }
 
   .modal img {
