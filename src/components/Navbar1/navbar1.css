@@ -142,7 +142,7 @@ li a {
     display: flex;
     color: var(--primary-black);
     font-size: 2rem;
-    opacity: 100% !important;
+    opacity: 1 !important;
     transition: all 3000ms ease;
     pointer-events: auto;
     cursor: pointer;
