@@ -1,0 +1,151 @@
+.big-container {
+  width: 100%;
+  position: relative;
+}
+
+.big-container.carousel#calousel2 {
+  height: calc((100vw * 9) / 16);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.big-container.carousel#carousel2 .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1000ms ease;
+}
+
+.big-container.carousel .slide.active {
+  z-index: 1;
+  opacity: 1;
+}
+
+.big-container.carousel2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#prev,
+#next {
+  z-index: 2;
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+#prev {
+  left: 1rem;
+}
+
+#next {
+  right: 1rem;
+}
+
+.carousel2-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.carousel2-background::after {
+  content: "";
+  display: block;
+  height: calc((100vw * 9) / 16);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(
+    360deg,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+.carousel2-background img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container.carousel2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  height: 100%;
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+
+.container.carousel2 h1,
+.container.carousel2 p {
+  color: var(--dark-white);
+}
+
+.carousel2-title {
+  line-height: 1.7rem;
+  font-size: var(--big-font-size);
+  width: 15ch;
+}
+
+.carousel2-title.three {
+  width: 18ch;
+}
+
+.carousel2-sub-text {
+  line-height: 1.5rem;
+  font-size: var(--medium-font-size);
+  width: 30ch;
+  margin-bottom: 1rem;
+}
+
+.container.carousel2 button {
+  background-color: transparent;
+  border: solid 1px var(--dark-white);
+  padding: 0.5rem 1rem;
+  color: var(--dark-white);
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .big-container.carousel#calousel1 {
+    height: calc((80vw * 9) / 16);
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .big-container.carousel#calousel1 {
+    height: calc((80vw * 9) / 16);
+    margin-bottom: 5rem;
+  }
+
+  .carousel2-background::after {
+    height: calc((80vw * 9) / 16);
+  }
+
+  .carousel2-title {
+    line-height: 3.5rem;
+  }
+
+  .container.carousel2 {
+    padding-bottom: 2rem;
+  }
+
+  #prev,
+  #next {
+    font-size: 2rem;
+  }
+}

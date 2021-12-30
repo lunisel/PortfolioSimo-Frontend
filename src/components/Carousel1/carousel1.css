@@ -111,15 +111,6 @@
   margin-bottom: 1rem;
 }
 
-.container.jumbotron button {
-  background-color: transparent;
-  border: solid 1px var(--dark-white);
-  padding: 0.5rem 1rem;
-  color: var(--dark-white);
-  display: flex;
-  align-items: center;
-}
-
 /* -------------------------------------QUERYS--------------------------------------- */
 
 @media screen and (min-width: 500px) {
