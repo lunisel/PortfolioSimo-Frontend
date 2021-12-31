@@ -69,15 +69,16 @@ const Progetti = (props) => {
   };
 
   useEffect(() => {
-    if (selectedImgId !== null) {
-      const fetchWithId = async () => {
-        let single = await fetchOne(selectedImgId);
-        if (single) {
-          setSelectedImg(single);
-        }
-      };
-      fetchWithId();
-    }
+    const fetchWithId = async () => {
+      let single = await fetchOne(selectedImgId);
+      if (single) {
+        setSelectedImg(single);
+        console.log(single);
+
+        setModal(true);
+      }
+    };
+    fetchWithId();
   }, [selectedImgId]);
 
   const nextPhoto = () => {
@@ -139,7 +140,6 @@ const Progetti = (props) => {
                   className="img-container-progetto"
                   onClick={() => {
                     setSelectedImgId(f._id);
-                    setModal(true);
                   }}
                   key={i}
                 >
