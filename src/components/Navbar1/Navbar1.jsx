@@ -25,7 +25,7 @@ const Navbar1 = (props) => {
   return (
     <nav id="main-nav">
       <div className="container nav1">
-        <div className="brand-title">
+        <div className="brand-title" onClick={() => props.history.push("/")}>
           <img src={logo} alt="Risi graph logo" className="nav-logo" />
           <h2 className="logo-name">
             RISI <span>GRAPH</span>

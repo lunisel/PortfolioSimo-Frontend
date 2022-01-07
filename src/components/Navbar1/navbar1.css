@@ -24,6 +24,7 @@ nav#main-nav {
 .brand-title {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-logo {
