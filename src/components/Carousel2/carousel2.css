@@ -95,7 +95,7 @@
 
 .carousel2-title {
   line-height: 1.7rem;
-  font-size: var(--big-font-size);
+  font-size: var(--medium-font-size);
   width: 15ch;
 }
 
@@ -105,7 +105,7 @@
 
 .carousel2-sub-text {
   line-height: 1.5rem;
-  font-size: var(--medium-font-size);
+  font-size: var(--small-font-size);
   width: 30ch;
   margin-bottom: 1rem;
 }

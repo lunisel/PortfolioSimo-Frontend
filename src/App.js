@@ -16,7 +16,7 @@ function App() {
           render={(routerProps) => <Home {...routerProps} />}
         />
         <Route
-          path="/progetti"
+          path="/portfolio"
           exact
           render={(routerProps) => <Progetti {...routerProps} />}
         />

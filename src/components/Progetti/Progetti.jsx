@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
 import { fetchAll } from "./progettiLogic.js";
-import {
-  MdOutlineKeyboardArrowDown,
-  MdClose,
-  MdArrowForwardIos,
-  MdArrowBackIos,
-} from "react-icons/md";
+import { MdClose, MdArrowForwardIos, MdArrowBackIos } from "react-icons/md";
 import "./progetti.css";
 
 const Progetti = (props) => {
-  const [seenFiles, setSeenFiles] = useState([]);
   const [allFiles, setAllFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState(false);
@@ -17,34 +11,14 @@ const Progetti = (props) => {
 
   useEffect(() => {
     setLoading(true);
-    const fetchNine = async () => {
+    const fetchAllFiles = async () => {
       let allFiles = await fetchAll();
       setAllFiles(allFiles);
-      let nineFilesArray = [];
-      for (let i = 0; i < 9; i++) {
-        nineFilesArray.push(allFiles[i]);
-      }
-      setSeenFiles(nineFilesArray);
-      if (seenFiles) setLoading(false);
+
+      if (allFiles) setLoading(false);
     };
-    fetchNine();
+    fetchAllFiles();
   }, []);
-
-  const loadMore = () => {
-    setLoading(true);
-    setTimeout(() => {
-      let fileArray = [...seenFiles];
-      for (let i = 0; i < 9; i++) {
-        if (allFiles[i + seenFiles.length] !== undefined) {
-          fileArray.push(allFiles[i + seenFiles.length]);
-        }
-      }
-
-      setSeenFiles(fileArray);
-
-      setLoading(false);
-    }, 1000);
-  };
 
   return (
     <div className="progetti-big-container">
@@ -76,7 +50,6 @@ const Progetti = (props) => {
                 }}
                 id="prev"
               />
-              {}
             </>
           )}
         </div>
@@ -84,8 +57,10 @@ const Progetti = (props) => {
         <>
           <h1 className="portfolio-titolo">Risi Graph Render</h1>
           <div className="container progetti">
-            {seenFiles &&
-              seenFiles.map((f, i) => (
+            {loading ? (
+              <div class="loader">Loading...</div>
+            ) : (
+              allFiles.map((f, i) => (
                 <div
                   className="img-container-progetto"
                   onClick={() => {
@@ -96,17 +71,9 @@ const Progetti = (props) => {
                 >
                   <img src={f.url} alt="render" />
                 </div>
-              ))}
+              ))
+            )}
           </div>
-          {loading ? (
-            <div class="loader">Loading...</div>
-          ) : allFiles.length !== seenFiles.length ? (
-            <div className="see-more" onClick={() => loadMore()}>
-              <MdOutlineKeyboardArrowDown /> See more
-            </div>
-          ) : (
-            ""
-          )}
         </>
       )}
     </div>

@@ -27,7 +27,7 @@ const Carousel2 = ({ props }) => {
         <div className="big-container carousel2">
           <div className="carousel2-background">
             <img
-              src="https://res.cloudinary.com/lunisel/image/upload/v1640807707/risiGraph/kpm7z5ygvfmk41ggsuqg.jpg"
+              src="https://res.cloudinary.com/lunisel/image/upload/v1640807049/risiGraph/iuwuagttvgiqmmwg8cam.jpg"
               alt=""
             />
           </div>

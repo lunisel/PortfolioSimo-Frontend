@@ -176,7 +176,7 @@
   }
 
   .big-container.carousel {
-    margin: 1rem auto;
+    margin: 0;
     margin-bottom: 3rem;
   }
 
@@ -197,7 +197,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1500px) {
   .big-container.carousel,
   .big-container.jumbotron,
   .jumbotron-background,
@@ -207,6 +207,7 @@
 
   .big-container.carousel {
     width: 80%;
+    margin: 1rem auto;
   }
 }
 

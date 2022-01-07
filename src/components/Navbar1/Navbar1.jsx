@@ -55,12 +55,12 @@ const Navbar1 = (props) => {
           </li>
           <li>
             <Link
-              to="/progetti"
+              to="/portfolio"
               className={
-                props.location.pathname === "/progetti" ? "active" : ""
+                props.location.pathname === "/portfolio" ? "active" : ""
               }
             >
-              PROGETTI
+              PORTFOLIO
             </Link>
           </li>
           <li>
